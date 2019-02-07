@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "UserProfileResult";
+}
+
+<h1>We have registered your profile.</h1>
+<h3>Firstname: @ViewBag.FirstName</h3>
+<h3>Lastname: @ViewBag.LastName</h3>
+<h3>Age: @ViewBag.Age</h3>
+<h3>@if (ViewBag.Work != null)
+{
+    <span>Working</span>
+}
+else
+{
+    <span>Not working</span>
+}
+</h3>
+<h3>Gender: @ViewBag.Gender</h3>
+

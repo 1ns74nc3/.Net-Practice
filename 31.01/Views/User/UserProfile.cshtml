@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "UserProfile";
+}
+@helper CreateList(string[] items){ 
+    <ul>
+        @foreach(string item in items)
+        {
+            <li>@Html.RadioButton("gender", item)<span>@item</span></li>
+        }
+    </ul>
+}
+
+@using (Html.BeginForm("UserProfile", "Home", FormMethod.Post))
+{
+    <br />
+    <p>Enter your age:</p>
+    <input type="number" name="age" />
+    <br />
+    <br />
+    <p>Enter your firstname:</p>
+    @Html.TextBox("userFirstName", "Enter your firstname...")
+    <br />
+    <br />
+    <p>Enter your lastname:</p>
+    @Html.TextBox("userLastName", "Enter your lastname...")
+    <br />
+    <br />
+    <p>Working?:</p>
+    <input type="checkbox" name="work" value="true"/>
+    <br />
+    <br />
+    <p>Select your gender:</p>
+    @CreateList(ViewBag.Gender)
+    <br />
+    <button>Submit</button>
+    <br />
+}
+
