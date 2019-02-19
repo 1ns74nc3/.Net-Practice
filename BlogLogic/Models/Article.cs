@@ -12,5 +12,7 @@ namespace BlogLogic.Models
         public string AuthorFirstName { get; set; }
         public string AuthorLastName { get; set; }
         public string ArticleText { get; set; }
+        public string ArticleName { get; set; }
+        public string Tags { get; set; }
     }
 }

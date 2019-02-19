@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Article";
+}
+<div class="content">
+    <div class="article-list">
+        <div>
+            <h2>Article name:</h2>
+            <h2>@Model.ArticleName</h2>
+            <h3>Author:</h3>
+            <h4>Firstname: @Model.AuthorFirstName</h4>
+            <h4>Lastname: @Model.AuthorLastName</h4>
+            <h4>@Model.DatePublished</h4>
+            <p>@Model.ArticleText</p>
+            <p>@foreach (var item in ViewBag.Tags)
+            {
+                <a href="#" class="tag">@item</a>
+            }
+            </p>
+        </div>
+    </div>
+</div>

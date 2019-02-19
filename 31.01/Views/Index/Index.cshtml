@@ -7,11 +7,9 @@
         @foreach (var item in Model)
         {
             <div>
-                <h4>@item.DatePublished</h4>
-                <h2>Author</h2>
-                <h3>Firstname: @item.AuthorFirstName</h3>
-                <h3>Lastname: @item.AuthorLastName</h3>
-                <p>@item.ArticleText</p>
+                <h2>@item.ArticleName</h2>
+                <p>@item.ArticleText.Substring(0,200)</p>
+                @Html.RouteLink("Read More", new { controller = "Article", action = "Article", id = item.Id }, new { target = "_blank" })
             </div>
         }
     </div>
@@ -39,6 +37,32 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="nav navbar-nav">
+            @if (ViewBag.VoteType == "Vote")
+            {
+                using (Html.BeginForm("Index", "Index", FormMethod.Post))
+                {
+                    <h3>What is your gender?</h3>
+                    @Html.RadioButton("gender", "Male")
+                    <span>Male</span>
+                    <br />
+                    @Html.RadioButton("gender", "Female")
+                    <span>Female</span>
+                    <br />
+                    <button type="submit">Submit</button>
+                }
+            }
+            else if(ViewBag.VoteType == "Result")
+            {
+                <h3>What is your gender?</h3>
+                <br />
+                <h4>Results:</h4>
+                <br />
+                <span>Male: </span>@ViewBag.Male
+                <br />
+                <span>Female: </span>@ViewBag.Female
+            }
         </div>
     </div>
 </div>

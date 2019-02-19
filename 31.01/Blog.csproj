@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GuestController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -194,8 +195,8 @@
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Guest\Guest.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
-    <Content Include="Views\Guest\GuestResult.cshtml" />
     <Content Include="Views\User\UserProfileResult.cshtml" />
+    <Content Include="Views\Article\Article.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,7 @@ namespace BlogLogic
     {
         static BlogContext()
         {
-            Database.SetInitializer<BlogContext>(new BlogContextInitializer());
+            Database.SetInitializer(new BlogContextInitializer());
         }
 
         public BlogContext() : base("DefaultConnection")
@@ -20,5 +20,6 @@ namespace BlogLogic
 
         public IDbSet<Comment> Comments { get; set; }
         public IDbSet<Article> Articles { get; set; }
+        public IDbSet<Voting> Voting { get; set; }
     }
 }

@@ -4,25 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BlogLogic;
+using BlogLogic.Models;
 
 namespace _31._01.Controllers
 {
     public class GuestController : Controller
     {
-        // GET: Guest
-        public ActionResult Guest(string guestName, string reviewTextBox)
+        public ActionResult Guest(Comment comment)
         {
             CommentsManager commentsManager = new CommentsManager();
-            var comments = commentsManager.GetData();
-
+            ViewBag.Comments = commentsManager.GetData();
+            
             //add new comment 
             if (Request.HttpMethod == "POST")
             {
-                commentsManager.AddItem(new Comment { CommentAuthor = guestName, CommentText = reviewTextBox, CommentDate = DateTime.Now });
-                comments = commentsManager.GetData();
+                if (ModelState.IsValid)
+                {
+                    comment.CommentDate = DateTime.Now;
+                    commentsManager.AddItem(comment);
+                    ViewBag.Comments = commentsManager.GetData();
+                    return View();
+                }
+                else
+                {
+                    return View();  
+                }
             }
-
-            return View(comments);
+            return View();
         }
     }
 }

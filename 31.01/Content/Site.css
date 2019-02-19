@@ -51,6 +51,10 @@ textarea {
     flex-wrap: wrap;
 }
 
+.tag {
+    font-weight: bold;
+}
+
 .navbar-right{
     width:20%;
     margin-right:5%;

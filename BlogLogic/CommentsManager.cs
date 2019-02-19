@@ -7,7 +7,7 @@ using BlogLogic.Models;
 
 namespace BlogLogic
 {
-    public class CommentsManager : IManager<Comment>
+    public class CommentsManager
     {
         //add item to Comments database
         public void AddItem(Comment item)

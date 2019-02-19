@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BlogLogic.Models;
 
 namespace BlogLogic
 {
-    public class ArticlesManager : IManager<Article>
+    public class ArticlesManager
     {
         //add item to Articles database
         public void AddItem(Article item)
